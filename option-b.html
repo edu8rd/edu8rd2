@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Valentina Kosmetik Herbst-Glow</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="JetPeel™ bei Valentina Kosmetik in Rodershausen. Herbst-Aktion: 249 € inklusive Lip Treatment von Monika Heiligmann.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap">
+<style>
+/* Layout: Beauty-Journal. Große randlose Bilder, Text wie in einem Magazin, Angebot als Gutschein zum Abreißen. Herbstfarbe Merlot statt Gold. */
+:root{
+  --paper:#fbf8f6;      /* Seitengrund, fast weiß mit Rosé */
+  --blush:#f2e3dd;      /* Flächen */
+  --blush-deep:#e4cdc4;
+  --ink:#211a1d;        /* Text */
+  --ink-soft:#6b5d61;
+  --merlot:#6e2b3a;     /* Herbst-Akzent */
+  --merlot-dark:#4d1d29;
+  --rose:#c9918f;
+  --white:#ffffff;
+  --font-display:"Gloock", "Didot", Georgia, serif;
+  --font-body:"Jost", "Futura", "Century Gothic", Arial, sans-serif;
+  --step--1:clamp(.84rem,.82rem + .1vw,.9rem);
+  --step-0:clamp(1.02rem,.98rem + .2vw,1.1rem);
+  --step-1:clamp(1.3rem,1.15rem + .6vw,1.6rem);
+  --step-2:clamp(1.75rem,1.4rem + 1.5vw,2.6rem);
+  --step-3:clamp(2.5rem,1.9rem + 3vw,4.4rem);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-weight:400;font-size:var(--step-0);line-height:1.65;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--paper)}
+img{max-width:100%;height:auto;display:block}
+[hidden]{display:none!important}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.04;margin:0;text-wrap:balance;letter-spacing:-.015em}
+h2{font-size:var(--step-3)}
+h3{font-size:var(--step-1);line-height:1.2}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--merlot);outline-offset:3px;border-radius:4px}
+
+.wrap{max-width:1160px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(64px,10vw,128px)}
+.band--blush{background:var(--blush)}
+.band--merlot{background:var(--merlot);color:var(--paper)}
+.label{font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;color:var(--merlot)}
+.band--merlot .label{color:var(--blush-deep)}
+.lede{color:var(--ink-soft);max-width:54ch;font-weight:300;font-size:var(--step-1);line-height:1.5}
+.stack{display:flex;flex-direction:column;gap:20px}
+.ph{border-bottom:1px dashed currentColor;opacity:.8}
+.small{font-size:var(--step--1);color:var(--ink-soft)}
+
+.draft{background:var(--ink);color:var(--blush);font-size:.76rem;letter-spacing:.04em;text-align:center;padding-block:6px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:58px;padding:0 30px;border-radius:0;font:500 .82rem/1 var(--font-body);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .25s ease, color .25s ease}
+.btn--merlot{background:var(--merlot);color:var(--white)}
+.btn--merlot:hover{background:var(--merlot-dark)}
+.btn--white{background:var(--white);color:var(--ink)}
+.btn--white:hover{background:var(--blush)}
+.btn--line{border-color:currentColor;background:transparent}
+.btn svg{width:18px;height:18px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+
+/* Kopfzeile */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(251,248,246,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--blush-deep)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px}
+.brand{font-family:var(--font-display);font-size:1.25rem;letter-spacing:.02em;text-decoration:none;line-height:1}
+.brand small{display:block;font-family:var(--font-body);font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);margin-top:4px}
+.top a.cta{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;text-decoration:none;border-bottom:1px solid var(--merlot);color:var(--merlot);padding-bottom:3px}
+
+/* Hero */
+.hero{position:relative;background:var(--ink);color:var(--white)}
+.hero__img{width:100%;aspect-ratio:4/5;max-height:88svh;object-fit:cover;object-position:50% 25%}
+.hero__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,26,29,0) 22%,rgba(33,26,29,.7) 50%,rgba(33,26,29,.96) 100%)}
+.hero__content{position:absolute;left:0;right:0;bottom:0;padding-block:0 28px;display:flex;flex-direction:column;gap:16px}
+.hero .label{color:var(--blush-deep)}
+.hero h1{font-size:clamp(2.9rem,2.1rem + 4vw,5.6rem)}
+.hero h1 i{font-style:normal;color:#f1cfc9}
+.hero p.sub{font-weight:300;font-size:var(--step-0);max-width:40ch;color:#eadfdb}
+.hero .btn{align-self:flex-start}
+
+/* Angebotsleiste */
+.strip{background:var(--merlot);color:var(--white)}
+.strip .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;padding-block:18px}
+.strip b{font-family:var(--font-display);font-weight:400;font-size:2.2rem;line-height:1}
+.strip p{font-weight:300;line-height:1.35;flex:1;min-width:180px}
+.strip p strong{font-weight:500}
+
+/* Laufband */
+.marquee{overflow:hidden;border-bottom:1px solid var(--blush-deep);background:var(--paper)}
+.marquee__track{display:flex;width:max-content;animation:run 32s linear infinite}
+.marquee span{font-family:var(--font-display);font-size:1.5rem;padding:16px 0;white-space:nowrap}
+.marquee span::after{content:"✦";font-size:.8rem;color:var(--merlot);margin:0 26px;vertical-align:middle}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* Intro */
+.intro{display:grid;gap:28px}
+.intro__statement{font-family:var(--font-display);font-size:var(--step-2);line-height:1.22;max-width:24ch;text-wrap:balance}
+.intro__statement em{font-style:normal;color:var(--merlot)}
+.intro__aside{display:grid;gap:18px;align-content:start}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.tags li{border:1px solid var(--blush-deep);padding:7px 14px;font-size:.84rem;letter-spacing:.04em}
+
+/* Phasen: horizontal wischen */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:82%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin;overscroll-behavior-x:contain}
+.rail>*{scroll-snap-align:start}
+.phase{background:var(--paper);padding:28px 24px 30px;display:flex;flex-direction:column;gap:14px;min-height:300px}
+.phase__no{font-family:var(--font-display);font-size:4.6rem;line-height:.9;color:var(--merlot)}
+.phase p{color:var(--ink-soft);font-weight:300}
+.phase .when{margin-top:auto;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-soft);border-top:1px solid var(--blush-deep);padding-top:14px}
+.hint{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
+
+/* Vorher/Nachher */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--white);padding:4px}
+.pair figure{margin:0;position:relative}
+.pair img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.pair figcaption{position:absolute;left:0;bottom:0;background:var(--white);font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;padding:6px 10px;font-weight:500}
+.pair figure+figure figcaption{background:var(--merlot);color:var(--white)}
+.pair-title{font-family:var(--font-display);font-size:1.2rem;margin-top:12px}
+
+/* Gutschein */
+.voucher{position:relative;background:var(--white);color:var(--ink);max-width:620px;margin-inline:auto;width:100%;box-shadow:0 40px 80px -40px rgba(0,0,0,.55)}
+.voucher__top{padding:34px 26px 28px;display:grid;gap:16px;text-align:center}
+.voucher__kicker{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;color:var(--merlot);font-weight:500}
+.voucher__price{font-family:var(--font-display);font-size:clamp(4.4rem,3.4rem + 4vw,6.4rem);line-height:.85}
+.voucher__price sup{font-size:.4em;vertical-align:top;position:relative;top:.25em;margin-left:4px}
+.voucher__sub{font-weight:300;color:var(--ink-soft)}
+.perf{position:relative;height:0;border-top:2px dashed var(--blush-deep);margin-inline:22px}
+.perf::before,.perf::after{content:"";position:absolute;top:-17px;width:32px;height:32px;border-radius:50%;background:var(--merlot)}
+.perf::before{left:-39px}
+.perf::after{right:-39px}
+.voucher__body{padding:28px 26px 30px;display:grid;gap:20px}
+.incl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.incl li{display:flex;justify-content:space-between;gap:16px;padding-block:13px;border-bottom:1px solid var(--blush)}
+.incl li span:last-child{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+.incl li.gift{border-bottom:0;background:var(--blush);margin-top:10px;padding:14px 16px;font-weight:500}
+.incl li.gift span:last-child{color:var(--merlot);font-weight:600}
+.incl s{color:var(--ink-soft);font-weight:400;margin-right:6px}
+.voucher .btn{width:100%}
+
+/* Lip */
+.lipgrid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(242,227,221,.3);border-left:1px solid rgba(242,227,221,.3)}
+.lipgrid div{padding:22px 16px;border-right:1px solid rgba(242,227,221,.3);border-bottom:1px solid rgba(242,227,221,.3);display:grid;gap:6px}
+.lipgrid b{font-family:var(--font-display);font-weight:400;font-size:var(--step-1)}
+.lipgrid span{font-size:var(--step--1);font-weight:300;color:var(--blush-deep)}
+
+/* Valentina */
+.portrait{position:relative;color:var(--white);background:var(--ink)}
+.portrait img{width:100%;aspect-ratio:4/5;max-height:92svh;object-fit:cover;object-position:50% 15%}
+.portrait__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,26,29,0) 45%,rgba(33,26,29,.85) 100%)}
+.portrait figcaption{position:absolute;left:0;right:0;bottom:0;padding-block:0 30px}
+.portrait blockquote{margin:0;font-family:var(--font-display);font-size:var(--step-2);line-height:1.15;max-width:20ch}
+.portrait cite{display:block;margin-top:14px;font-style:normal;font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--blush-deep)}
+.about-text{display:grid;gap:22px}
+.studio img{width:100%;aspect-ratio:16/8;object-fit:cover}
+
+/* Bewertungen */
+.reviews{grid-auto-columns:86%}
+.review{background:var(--white);padding:28px 24px;display:flex;flex-direction:column;gap:16px;border:1px solid var(--blush-deep)}
+.review p{font-family:var(--font-display);font-size:var(--step-1);line-height:1.35}
+.review footer{margin-top:auto;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft)}
+.stars{color:var(--merlot);letter-spacing:3px}
+.score{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.score b{font-family:var(--font-display);font-weight:400;font-size:var(--step-3);line-height:1}
+
+/* FAQ */
+.faq details{border-top:1px solid var(--ink)}
+.faq details:last-child{border-bottom:1px solid var(--ink)}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:2.4rem 1fr 24px;gap:10px;align-items:baseline;padding-block:20px;font-size:var(--step-0);font-weight:500}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .n{font-family:var(--font-display);color:var(--merlot);font-weight:400}
+.faq summary .x{position:relative;width:14px;height:14px;justify-self:end;align-self:center}
+.faq summary .x::before,.faq summary .x::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--ink);transition:transform .2s}
+.faq summary .x::after{transform:rotate(90deg)}
+.faq details[open] .x::after{transform:rotate(0)}
+.faq details p{padding:0 0 22px 2.4rem;padding-left:calc(2.4rem + 10px);color:var(--ink-soft);font-weight:300;max-width:64ch}
+
+/* Formular */
+.booking{display:grid;gap:36px}
+form{display:grid;gap:22px}
+.field{display:grid;gap:4px}
+label,.legend{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--blush-deep)}
+.opt{letter-spacing:.08em;text-transform:none;font-weight:300}
+input[type=text],input[type=tel],input[type=email],textarea{font:300 1.15rem/1.4 var(--font-body);width:100%;padding:12px 0;border:0;border-bottom:1px solid rgba(242,227,221,.45);background:transparent;color:var(--white);border-radius:0}
+textarea{min-height:70px;resize:vertical}
+input:focus,textarea:focus{outline:0;border-bottom-color:var(--white)}
+input::placeholder,textarea::placeholder{color:rgba(242,227,221,.5)}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{display:inline-block;padding:10px 16px;border:1px solid rgba(242,227,221,.45);font-size:.88rem}
+.chip input:checked+span{background:var(--white);color:var(--merlot);border-color:var(--white)}
+.chip input:focus-visible+span{outline:2px solid var(--white);outline-offset:2px}
+.consent{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:.86rem;letter-spacing:0;text-transform:none;font-weight:300;color:var(--blush)}
+.consent input{width:20px;height:20px;margin:2px 0 0;accent-color:var(--white)}
+.error{color:#ffd9d4;font-size:var(--step--1)}
+.success{display:grid;gap:14px;padding-block:30px}
+.success h3{font-size:var(--step-2)}
+.direct{display:grid;gap:4px;border-top:1px solid rgba(242,227,221,.3);padding-top:20px}
+.direct span{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blush-deep)}
+.direct strong{font-family:var(--font-display);font-weight:400;font-size:var(--step-1)}
+
+/* Fußzeile */
+.foot{background:var(--ink);color:#cbbdb9;font-size:var(--step--1);font-weight:300;padding-block:48px calc(110px + env(safe-area-inset-bottom,0px))}
+.foot .wrap{display:grid;gap:26px}
+.foot .brand{color:var(--white);font-size:1.6rem}
+.foot a{color:var(--white)}
+.foot nav{display:flex;gap:22px;flex-wrap:wrap}
+
+/* Sticky-Leiste */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:0 max(0px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(0px,env(safe-area-inset-left,0px));background:var(--merlot);color:var(--white);display:grid;grid-template-columns:1fr auto;align-items:stretch;transform:translateY(110%);transition:transform .35s ease}
+.dock.is-visible{transform:none}
+.dock__txt{padding:12px 0 12px max(20px,env(safe-area-inset-left,0px));line-height:1.25;font-size:.82rem;font-weight:300}
+.dock__txt b{font-family:var(--font-display);font-weight:400;font-size:1.5rem}
+.dock .btn{min-height:auto;background:var(--white);color:var(--merlot);padding:0 22px}
+
+@media (min-width:820px){
+  .hero{display:grid;grid-template-columns:1fr 1fr;background:var(--paper);color:var(--ink)}
+  .hero__img{order:2;height:100%;max-height:none;aspect-ratio:auto;min-height:640px}
+  .hero__shade{display:none}
+  .hero__content{position:static;justify-content:center;padding:64px 56px 64px max(20px,calc((100vw - 1160px)/2 + 20px))}
+  .hero .label{color:var(--merlot)}
+  .hero h1 i{color:var(--merlot)}
+  .hero p.sub{color:var(--ink-soft);font-size:var(--step-1)}
+  .intro{grid-template-columns:1.4fr 1fr;gap:64px;align-items:end}
+  .rail{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible}
+  .rail.pairs{grid-template-columns:repeat(2,1fr)}
+  .reviews{grid-template-columns:repeat(2,1fr)}
+  .hint{display:none}
+  .lipgrid{grid-template-columns:repeat(4,1fr)}
+  .about{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+  .portrait img{height:100%;max-height:none;aspect-ratio:auto;min-height:620px}
+  .about-text{padding:64px 56px;align-content:center}
+  .faqgrid{display:grid;grid-template-columns:1fr 1.5fr;gap:72px}
+  .booking{grid-template-columns:1fr 1.2fr;gap:72px}
+  .foot .wrap{grid-template-columns:1.2fr 1fr 1fr}
+  .dock{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="draft">Entwurf Option B · gestrichelte Angaben sind Platzhalter</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#start">Valentina<small>Kosmetik · Rodershausen</small></a>
+    <a class="cta" href="#termin">Termin anfragen</a>
+  </div>
+</header>
+
+<main id="start">
+
+  <section class="hero">
+    <img class="hero__img" src="img/hero-behandlung.jpg" alt="Valentina Theis bei einer JetPeel-Behandlung" width="950" height="1330">
+    <div class="hero__shade"></div>
+    <div class="hero__content wrap">
+      <p class="label">JetPeel™ · Herbst 2026</p>
+      <h1>Dein Herbst&shy;-Glow <i>beginnt hier.</i></h1>
+      <p class="sub">Tiefenreinigung, Pflege und Massage mit einem feinen Jetstream. Ganz ohne Nadeln, persönlich von Valentina.</p>
+      <a class="btn btn--white" href="#termin">Termin sichern <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <b>249 €</b>
+      <p><strong>+ Lip Treatment von Monika Heiligmann</strong><br>im Wert von 100 € geschenkt</p>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Ohne Nadeln</span><span>Ohne Ausfallzeit</span><span>Persönliche Hautanalyse</span><span>Lip Ritual geschenkt</span><span>5,0 Sterne bei Google</span>
+      <span>Ohne Nadeln</span><span>Ohne Ausfallzeit</span><span>Persönliche Hautanalyse</span><span>Lip Ritual geschenkt</span><span>5,0 Sterne bei Google</span>
+    </div>
+  </div>
+
+  <section class="band" id="jetpeel">
+    <div class="wrap intro">
+      <div class="stack" style="gap:26px">
+        <p class="label">Die Behandlung</p>
+        <p class="intro__statement">JetPeel reinigt, pflegt und massiert deine Haut mit <em>Luft und Kochsalzlösung</em>. Das fühlt sich an wie eine kühle Brise.</p>
+      </div>
+      <div class="intro__aside">
+        <p style="color:var(--ink-soft);font-weight:300">Der feine Strahl löst Schüppchen und bringt Seren dorthin, wo deine Haut sie aufnehmen kann. Die Haut wird dabei nicht verletzt. Du kannst danach in der Regel direkt in deinen Tag starten.</p>
+        <ul class="tags">
+          <li>Fahler Teint</li><li>Trockene Haut</li><li>Feine Linien</li><li>Große Poren</li><li>Vor einem Anlass</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--blush" style="padding-top:clamp(56px,8vw,96px)">
+    <div class="wrap stack" style="gap:30px">
+      <div class="stack" style="gap:14px">
+        <p class="label">In drei Phasen</p>
+        <h2>So läuft dein JetPeel ab</h2>
+      </div>
+      <div class="rail" tabindex="0" aria-label="Die drei Phasen">
+        <article class="phase"><span class="phase__no">01</span><h3>Reinigen &amp; peelen</h3><p>Der Jetstream entfernt abgestorbene Hautschüppchen und Unreinheiten. Die Haut wird spürbar glatter.</p><span class="when">Klärt das Hautbild</span></article>
+        <article class="phase"><span class="phase__no">02</span><h3>Wirkstoffe einbringen</h3><p>Ein auf deine Haut abgestimmtes Serum wird mit dem Strahl eingeschleust. Für Feuchtigkeit und Glow.</p><span class="when">Nährt und befeuchtet</span></article>
+        <article class="phase"><span class="phase__no">03</span><h3>Lymph-Massage</h3><p>Zum Schluss massiert der Luftstrom dein Gesicht. Das entspannt und lässt die Haut praller wirken.</p><span class="when">Entspannt und strafft optisch</span></article>
+      </div>
+      <p class="hint">Wischen <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></p>
+    </div>
+  </section>
+
+  <section class="band" id="ergebnisse">
+    <div class="wrap stack" style="gap:30px">
+      <div class="stack" style="gap:14px">
+        <p class="label">Aus dem Studio</p>
+        <h2>Vorher. Nachher.</h2>
+      </div>
+      <div class="rail pairs" tabindex="0" aria-label="Vorher-Nachher-Fotos">
+        <div>
+          <div class="pair">
+            <figure><img src="img/vorher-augen.jpg" alt="Augenpartie vor der Behandlung" width="478" height="646"><figcaption>Vorher</figcaption></figure>
+            <figure><img src="img/nachher-augen.jpg" alt="Augenpartie nach der Behandlung" width="478" height="646"><figcaption>Nachher</figcaption></figure>
+          </div>
+          <p class="pair-title">Augenpartie</p>
+        </div>
+        <div>
+          <div class="pair">
+            <figure><img src="img/vorher-wange.jpg" alt="Wange und Mund vor der Behandlung" width="478" height="650"><figcaption>Vorher</figcaption></figure>
+            <figure><img src="img/nachher-wange.jpg" alt="Wange und Mund nach der Behandlung" width="478" height="650"><figcaption>Nachher</figcaption></figure>
+          </div>
+          <p class="pair-title">Wange &amp; Mund</p>
+        </div>
+      </div>
+      <p class="hint">Wischen für mehr <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></p>
+      <p class="small">Unbearbeitete Fotos von Kundinnen. Ergebnisse können individuell variieren.</p>
+    </div>
+  </section>
+
+  <section class="band band--merlot" id="angebot">
+    <div class="wrap stack" style="gap:48px">
+      <div class="stack" style="gap:14px;text-align:center;align-items:center">
+        <p class="label">Nur im Herbst</p>
+        <h2>Dein Gutschein</h2>
+      </div>
+      <div class="voucher">
+        <div class="voucher__top">
+          <span class="voucher__kicker">JetPeel™ + Lip Ritual</span>
+          <div class="voucher__price">249<sup>€</sup></div>
+          <p class="voucher__sub">inklusive Geschenk im Wert von 100 €</p>
+        </div>
+        <div class="perf" aria-hidden="true"></div>
+        <div class="voucher__body">
+          <ul class="incl">
+            <li><span>Persönliche Hautanalyse</span><span>inklusive</span></li>
+            <li><span>JetPeel™, alle drei Phasen</span><span>inklusive</span></li>
+            <li><span>Pflegetipps für zu Hause</span><span>inklusive</span></li>
+            <li class="gift"><span>Lip Treatment von Monika Heiligmann</span><span><s>100 €</s>gratis</span></li>
+          </ul>
+          <a class="btn btn--merlot" href="#termin">Gutschein einlösen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></a>
+          <p class="small" style="text-align:center">Unverbindlich anfragen. Bezahlt wird erst im Studio.</p>
+        </div>
+      </div>
+      <div class="stack" style="gap:24px;max-width:900px;margin-inline:auto;width:100%">
+        <div class="stack" style="gap:10px">
+          <p class="label">Dein Geschenk</p>
+          <h3 style="font-size:var(--step-2)">Das 4-Step Lip Ritual</h3>
+          <p style="font-weight:300;color:var(--blush);max-width:56ch">Nach dem JetPeel kümmern wir uns um deine Lippen. Vier Schritte von Monika Heiligmann, ebenfalls ganz ohne Nadeln.</p>
+        </div>
+        <div class="lipgrid">
+          <div><b>Volumen</b><span>sichtbar vollere Lippen</span></div>
+          <div><b>Kontur</b><span>schön definierter Rand</span></div>
+          <div><b>Glätte</b><span>weniger Lippenfältchen</span></div>
+          <div><b>Feuchtigkeit</b><span>zart und geschmeidig</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="valentina">
+    <figure class="portrait" style="margin:0">
+      <img src="img/valentina.jpg" alt="Valentina Theis, Inhaberin von Valentina Kosmetik" width="990" height="1350" loading="lazy">
+      <div class="portrait__shade"></div>
+      <figcaption class="wrap">
+        <blockquote>„Jede Haut ist anders. Genau so behandle ich sie auch.“</blockquote>
+        <cite>Valentina Theis · Inhaberin</cite>
+      </figcaption>
+    </figure>
+    <div class="about-text wrap band">
+      <p class="label">Deine Kosmetikerin</p>
+      <h2 style="font-size:var(--step-2)">Persönlich. Vom ersten Gespräch bis zum letzten Pflegetipp.</h2>
+      <p style="color:var(--ink-soft);font-weight:300">Bei Valentina Kosmetik in Rodershausen behandle ich dich selbst. Vor deinem JetPeel sprechen wir in Ruhe über deine Haut und deine Wünsche. <span class="ph">Seit [X] Jahren bin ich Kosmetikerin</span> und arbeite nur mit hochwertigen, gut verträglichen Produkten.</p>
+      <div class="studio"><img src="img/studio.jpg" alt="Blick in das Studio" width="990" height="465" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="band band--blush" id="stimmen">
+    <div class="wrap stack" style="gap:30px">
+      <div class="score"><b>5,0</b><div><span class="stars" aria-label="5 von 5 Sternen">★★★★★</span><br><span class="small">Bewertungen auf Google</span></div></div>
+      <div class="rail reviews" tabindex="0" aria-label="Bewertungen">
+        <blockquote class="review" style="margin:0"><span class="stars" aria-hidden="true">★★★★★</span><p>„Ehrliche und Fach kompetente Beratung, professionelle Behandlungen mit sichtbaren Ergebnissen. Es werden sehr hochwertig, gut verträgliche Produkte verwendet.“</p><footer>Julia · Google</footer></blockquote>
+        <blockquote class="review" style="margin:0"><span class="stars" aria-hidden="true">★★★★★</span><p>„Sehr kompetente Kosmetikerin, gute Beratung.“</p><footer>Astrid · Google</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="fragen">
+    <div class="wrap faqgrid">
+      <div class="stack" style="gap:14px;margin-bottom:28px">
+        <p class="label">Fragen &amp; Antworten</p>
+        <h2>Gut zu wissen</h2>
+      </div>
+      <div class="faq">
+        <details><summary><span class="n">01</span><span>Tut JetPeel weh?</span><span class="x"></span></summary><p>Nein. Die meisten Kundinnen empfinden den Strahl als kühl und angenehm, wie eine leichte Brise.</p></details>
+        <details><summary><span class="n">02</span><span>Sieht man mir danach etwas an?</span><span class="x"></span></summary><p>In der Regel nicht. Eine leichte Rötung kann auftreten und klingt meist schnell ab. Make-up am besten erst am nächsten Tag.</p></details>
+        <details><summary><span class="n">03</span><span>Ist JetPeel für meine Haut geeignet?</span><span class="x"></span></summary><p>JetPeel ist sehr sanft und für fast alle Hauttypen geeignet, auch für empfindliche Haut. Im Beratungsgespräch klären wir das gemeinsam.</p></details>
+        <details><summary><span class="n">04</span><span>Wann sehe ich ein Ergebnis?</span><span class="x"></span></summary><p>Viele Kundinnen sehen direkt nach der Behandlung einen frischeren Teint. Für ein länger anhaltendes Ergebnis empfehlen wir mehrere Termine im Abstand von einigen Wochen.</p></details>
+        <details><summary><span class="n">05</span><span>Wie lange dauert der Termin?</span><span class="x"></span></summary><p>Plane etwa <span class="ph">90 Minuten</span> ein, mit Beratung und Lip Ritual.</p></details>
+        <details><summary><span class="n">06</span><span>Kann ich den Gutschein verschenken?</span><span class="x"></span></summary><p>Sehr gerne. Schreib uns im Formular, dass du einen Gutschein möchtest.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--merlot" id="termin">
+    <div class="wrap booking">
+      <div class="stack" style="gap:18px">
+        <p class="label">Termin anfragen</p>
+        <h2>Lass uns deinen Termin finden.</h2>
+        <p style="font-weight:300;color:var(--blush);max-width:44ch">Name und Telefonnummer reichen. Wir rufen dich innerhalb von 24 Stunden zurück, ganz unverbindlich.</p>
+        <div class="direct"><span>Lieber direkt?</span><strong>Telefon &amp; WhatsApp: <span class="ph">[Nummer]</span></strong></div>
+      </div>
+      <div>
+        <form id="lead" novalidate>
+          <div class="field"><label for="b-name">Name</label><input type="text" id="b-name" autocomplete="name" placeholder="Vor- und Nachname" required></div>
+          <div class="field"><label for="b-tel">Telefon</label><input type="tel" id="b-tel" autocomplete="tel" inputmode="tel" placeholder="Für den Rückruf" required></div>
+          <div class="field"><label for="b-mail">E-Mail <span class="opt">(optional)</span></label><input type="email" id="b-mail" autocomplete="email"></div>
+          <fieldset>
+            <legend class="legend">Wann passt es dir? <span class="opt">(optional)</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" id="b-t1" value="Vormittags"><span>Vormittags</span></label>
+              <label class="chip"><input type="checkbox" id="b-t2" value="Nachmittags"><span>Nachmittags</span></label>
+              <label class="chip"><input type="checkbox" id="b-t3" value="Abends"><span>Abends</span></label>
+              <label class="chip"><input type="checkbox" id="b-t4" value="Samstag"><span>Samstag</span></label>
+            </div>
+          </fieldset>
+          <div class="field"><label for="b-msg">Nachricht <span class="opt">(optional)</span></label><textarea id="b-msg" placeholder="z. B. als Gutschein"></textarea></div>
+          <label class="consent"><input type="checkbox" id="b-ok" required><span>Ich bin einverstanden, dass mich Valentina Kosmetik zur Terminabstimmung kontaktiert. Details in der <a href="#datenschutz">Datenschutzerklärung</a>.</span></label>
+          <p class="error" id="b-err" hidden></p>
+          <button class="btn btn--white" type="submit">Anfrage senden <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+        </form>
+        <div class="success" id="b-done" hidden>
+          <p class="label">Angekommen</p>
+          <h3 id="b-thanks">Danke!</h3>
+          <p style="font-weight:300;color:var(--blush)">Wir rufen dich innerhalb von 24 Stunden an und finden gemeinsam deinen Termin.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="stack" style="gap:6px"><span class="brand">Valentina Kosmetik</span><span>Für Ihre natürliche Schönheit</span></div>
+    <div class="stack" style="gap:4px">
+      <span class="ph">[Straße und Hausnummer]</span>
+      <span><span class="ph">[PLZ]</span> Rodershausen</span>
+      <span>Öffnungszeiten: <span class="ph">[nach Vereinbarung]</span></span>
+    </div>
+    <nav aria-label="Rechtliches"><a href="#impressum" id="impressum">Impressum</a><a href="#datenschutz" id="datenschutz">Datenschutz</a></nav>
+  </div>
+</footer>
+
+<div class="dock" id="dock" aria-hidden="true">
+  <div class="dock__txt"><b>249 €</b><br>+ Lip Ritual gratis</div>
+  <a class="btn" href="#termin" tabindex="-1">Termin</a>
+</div>
+
+<script>
+(function(){
+  var dock=document.getElementById('dock');
+  var hero=document.querySelector('.hero');
+  var termin=document.getElementById('termin');
+  function onScroll(){
+    var past=hero.getBoundingClientRect().bottom<0;
+    var r=termin.getBoundingClientRect();
+    var show=past&&!(r.top<window.innerHeight&&r.bottom>0);
+    dock.classList.toggle('is-visible',show);
+    dock.setAttribute('aria-hidden',show?'false':'true');
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  // Formular (Entwurf: wird noch nicht versendet)
+  var form=document.getElementById('lead'),err=document.getElementById('b-err');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('b-name').value.trim();
+    var tel=document.getElementById('b-tel').value.trim();
+    var msg='';
+    if(!name)msg='Bitte trag deinen Namen ein.';
+    else if(tel.replace(/\D/g,'').length<6)msg='Bitte trag eine Telefonnummer ein, unter der wir dich erreichen.';
+    else if(!document.getElementById('b-ok').checked)msg='Bitte bestätige kurz die Einwilligung, damit wir dich anrufen dürfen.';
+    if(msg){err.textContent=msg;err.hidden=false;return;}
+    err.hidden=true;
+    document.getElementById('b-thanks').textContent='Danke, '+name.split(' ')[0]+'!';
+    form.hidden=true;
+    document.getElementById('b-done').hidden=false;
+  });
+})();
+</script>
+</body>
+</html>
